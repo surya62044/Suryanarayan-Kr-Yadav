@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <h1><span class="color1">Cafe🤎</span>
+                <span class="color3">Naveen</span>
+            </h1>
+            </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <!-- "Book Order" button, now linking to menu -->
+            <button class="btn-book" id="BookOrderBtn">Book Order</button>
+            <button class="btn-cart" id="viewCartBtn">View Cart</button>
+        </div>
+    </nav>
+</header>
+
+
+    <!-- Sections for the rest of the page -->
+    <!-- Home Section -->
+    <section id="home">
+         <div class="home-content"> 
+            <div class="home-text"> 
+                <h2 id="animatedText"></h2>
+                 <p>Experience the best dining experience with our delicious dishes and cozy atmosphere. 
+                    Our restaurant offers a wide variety of gourmet dishes made from fresh ingredients.
+                     Join us for an unforgettable culinary journey!</p>
+                     
+                     <button class="btn-learn-more" onclick="toggleContent()">Learn More</button> 
+                     <div class="additional-content" id="additionalContent"> 
+                        <p>Our menu includes an array of dishes to satisfy every palate, from classic favorites to unique creations by our talented chefs. 
+                            We also prioritize sustainability by sourcing ingredients locally and ensuring top-notch quality in every dish. Join us to enjoy not just a meal but a memorable experience in our warm and welcoming atmosphere.</p> 
+                        
+                        </div> </div> <div class="home-image"> 
+                            <img src="image/cafe.jpg" alt="Restaurant Image"> 
+                        </div>
+                     </div>
+                     </section>
+                     
+                        
+
+    <!-- About Section -->
+<section id="about">
+    <div class="about-content">
+        <div class="about-image">
+            <img src="image/foods.jpg" alt="About Restaurant">
+        </div>
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>Welcome to Cafe Naveen! We’re a passionate team dedicated to delivering exceptional culinary experiences. Our chefs use only the freshest ingredients to create dishes that are both authentic and innovative, bringing together flavors from around the world. Whether you’re here for a casual meal or a special celebration, we’re committed to making your visit unforgettable.</p>
+            <p>At Cafe Naveen, we believe that every meal should be an experience. Our cozy atmosphere, friendly service, and carefully crafted menu are designed to make you feel right at home. Join us and discover why we’re one of the top dining destinations in town!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Menu Section -->
+<section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-container">
+        <!-- Card 1 -->
+        <div class="menu-card">
+            <img src="image/pizza.jpg" alt="Pizza">
+            <h3>Pizza</h3>
+            <p>"Fresh veggies, melted mozzarella, and tangy tomato sauce on a crispy crust, baked to perfection."</p>
+            <span class="price">$12.99</span>
+            <button class="btn-order" onclick="orderDish('Pizza')">Book Order</button>
+        </div>
+        <!-- Card 2 -->
+        <div class="menu-card">
+            <img src="image/burger.jpg" alt="Burger">
+            <h3>Burger</h3>
+            <p>"Juicy patty, crispy bacon, melted cheddar, and creamy mayo on a toasted brioche bun."</p>
+            <span class="price">$8.99</span>
+            <button class="btn-order" onclick="orderDish('Burger')">Book Order</button>
+        </div>
+        <!-- Card 3 -->
+        <div class="menu-card">
+            <img src="image/springroll.jpg" alt="Spring Roll">
+            <h3>Spring Roll</h3>
+            <p>"Crispy fried or steamed roll filled with shredded veggies, served with sweet chili sauce."</p>
+            <span class="price">$5.99</span>
+            <button class="btn-order" onclick="orderDish('Spring Roll')">Book Order</button>
+        </div>
+          <!-- Card 4 -->
+          <div class="menu-card">
+            <img src="image/pasta.jpg" alt="Dish 4">
+            <h3>Pasta</h3>
+            <p>"Tanglend noodles tossed with garlic, herbs, and rich tomato sauce, topped with parmesan cheese."</p>
+           
+            <span class="price">$12.99</span>
+            <button class="btn-order" onclick="orderDish('Pasta')">Book Order</button>
+        </div>
+        <!-- Card 5 -->
+        <div class="menu-card">
+            <img src="image/paneer.jpg" alt="Dish 5">
+            <h3>Paneer Chilli</h3>
+            <p>"Spicy stir-fried paneer, onions, and bell peppers in a flavorful Indo-Chinese delight."</p>
+            
+            <span class="price">$12.99</span>
+            <button class="btn-order" onclick="orderDish('Paneer Chilli')">Book Order</button>
+        </div>
+        <!-- Card 6 -->
+        <div class="menu-card">
+            <img src="image/chowmin.jpg" alt="Dish 6">
+            <h3>Chowmin</h3>
+            <p>"Classic Chinese stir-fry noodles with mixed vegetables."</p>
+           
+                <span class="price">$12.99</span>
+            <button class="btn-order" onclick="orderDish('Chowmin')">Book Order</button>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+   <!-- Add the Checkout Section at the end of your Menu Section -->
+<section id="checkout" style="display: none;">
+    <h2>Checkout</h2>
+    <div id="orderSummary">
+        <!-- Dynamically populated order summary goes here -->
+    </div>
+    <button id="confirmOrderBtn" class="btn-confirm">Confirm Order</button>
+    <p id="checkoutStatus"></p>
+</section>
+
+
+
+
+
+<!-- Gallery Section -->
+<section id="gallery">
+    <h2>Our Gallery</h2>
+    <div class="gallery-container">
+        <!-- Image 1 -->
+        <div class="gallery-item">
+            <img src="image/maggie.jpg" alt="Gallery Image 1">
+        </div>
+        <!-- Image 2 -->
+        <div class="gallery-item">
+            <img src="image/sandwich.jpg" alt="Gallery Image 2">
+        </div>
+        <!-- Image 3 -->
+        <div class="gallery-item">
+            <img src="image/sand.jpg" alt="Gallery Image 3">
+        </div>
+        <!-- Image 4 -->
+        <div class="gallery-item">
+            <img src="image/cafe2.jpg" alt="Gallery Image 4">
+        </div>
+        <!-- Image 5 -->
+        <div class="gallery-item">
+            <img src="image/people.jpg" alt="Gallery Image 5">
+        </div>
+        <!-- Image 6 -->
+        <div class="gallery-item">
+            <img src="image/coffee.jpg" alt="Gallery Image 6">
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact us form -->
+ <section id="contact">
+        <h2>Contact Us:</h2>
+        <form id="contactForm">
+            <div class="form-container">
+                <!-- Name & Email Row -->
+                <div class="form-row">
+                    <div class="input-container">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+
+                <!-- Phone & Message Row -->
+                <div class="form-row">
+                    <div class="input-container">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit">Send Message</button>
+                <p id="formStatus"></p>
+            </div>
+        </form>
+    </section>
+
+
+ <!-- Footer Section -->
+<footer id="footer">
+    <div class="footer-container">
+        <!-- About Us Section -->
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>We are dedicated to delivering the best customer service with quality products. Our goal is to provide you with the best shopping experience online.</p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>Email: contact@company.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 1234 Business Rd, City, Country</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul class="social-links">
+                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Your Company. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
